@@ -1,3 +1,7 @@
+from rest_framework import viewsets
+from home.models import Hcsde2, Hcsde2, Hcsde2
+from .serializers import Hcsde2Serializer, Hcsde2Serializer, Hcsde2Serializer
+from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
 from rest_framework.authtoken.models import Token
@@ -28,3 +32,12 @@ class LoginViewSet(ViewSet):
         token, created = Token.objects.get_or_create(user=user)
         user_serializer = UserSerializer(user)
         return Response({"token": token.key, "user": user_serializer.data})
+
+
+class Hcsde2ViewSet(viewsets.ModelViewSet):
+    serializer_class = Hcsde2Serializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Hcsde2.objects.all()

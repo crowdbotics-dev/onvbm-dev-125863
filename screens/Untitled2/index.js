@@ -1,3 +1,4 @@
+import { CheckBox } from "react-native-elements";
 import { Slider } from "react-native-elements";
 import { Text } from "react-native";
 import { ImageBackground } from "react-native";
@@ -17,7 +18,7 @@ const Untitled2 = () => {
       }} resizeMode="cover"></ImageBackground><Text style={styles.nDNJaiVg}>Lorem ipsum…</Text><Slider style={styles.olQHEXdz} thumbStyle={{
         height: 20,
         width: 20
-      }} thumbTintColor="#0000FF" maximumValue={1} minimumValue={0}></Slider></ScrollView>
+      }} thumbTintColor="#0000FF" maximumValue={1} minimumValue={0}></Slider><CheckBox style={styles.gYKQLvuF} title="Checkbox Title"></CheckBox></ScrollView>
     </SafeAreaView>;
 };
 
@@ -43,6 +44,10 @@ const styles = StyleSheet.create({
   olQHEXdz: {
     width: 150,
     height: 40
+  },
+  gYKQLvuF: {
+    width: 183,
+    height: 69
   }
 });
 export default Untitled2;
